@@ -4,7 +4,7 @@ set -e
 
 # HASHISTACK INSTALLER - Automated Installation of the HashiCorp Stack
 #
-#  Automatically Download, Extract and Install Latest or Specific 
+#  Automatically Download, Extract and Install Latest or Specific
 #  Version of Terraform, Packer, Consul, Vault, Nomad
 #
 # Inspired from https://github.com/robertpeteuil/packer-installer

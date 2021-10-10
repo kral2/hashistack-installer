@@ -31,7 +31,7 @@ Download Installer
 
 ``` shell
 curl -LO https://raw.github.com/kral2/hashistack-installer/main/hashistack-install.sh
-chmod +x terraform-install.sh
+chmod +x hashistack-install.sh
 ```
 
 Run local installer
