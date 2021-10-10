@@ -18,8 +18,8 @@ The **hashistack-install** script automates the process of downloading and insta
 
 It is based on [Robert Peteuil](https://github.com/robertpeteuil)'s excellent [terraform-installer](https://github.com/robertpeteuil/terraform-installer) and [packer-installer](https://github.com/robertpeteuil/packer-installer).
 
-- additional install scripts for [Consul](https://www.consul.io/), [Vault](https://www.vaultproject.io/) and [Nomad](https://www.nomadproject.io/) has been created.
-- minor changes has also been made to select binaries correctly for Linux on arm (use `arm64` binaries instead of `arm` when `aarch` is detected).
+- additional install scripts for [Consul](https://www.consul.io/), [Vault](https://www.vaultproject.io/) and [Nomad](https://www.nomadproject.io/) were created.
+- minor changes were also made to select binaries correctly for Linux on arm (use `arm64` binaries instead of `arm` when `aarch` is detected).
 
 Current version is just a wrapper script calling each individual installer with the `-a` flag, which automatically `sudo` to install to `/usr/bin/local`. Future versions of this global installer may give more choices, exposing installer options for each installer or selecting which product to install.
 
