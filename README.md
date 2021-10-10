@@ -21,7 +21,9 @@ It is based on [Robert Peteuil](https://github.com/robertpeteuil)'s excellent [t
 - additional install scripts for [Consul](https://www.consul.io/), [Vault](https://www.vaultproject.io/) and [Nomad](https://www.nomadproject.io/) were created.
 - minor changes were also made to select binaries correctly for Linux on arm (use `arm64` binaries instead of `arm` when `aarch` is detected).
 
-Current version is just a wrapper script calling each individual installer with the `-a` flag, which automatically `sudo` to install to `/usr/bin/local`. Future versions of this global installer may give more choices, exposing installer options for each installer or selecting which product to install.
+Current version is just a wrapper script calling each individual installer with the `-a` flag, which automatically `sudo` to install to `/usr/bin/local`.
+
+Future versions of this global installer may give more choices, exposing installer options for each installer.
 
 For detailed options and capabilities of each installer, please see Robert's [Packer Installer](https://github.com/robertpeteuil/packer-installer) and [Terraform Installer](https://github.com/robertpeteuil/terraform-installer).
 
@@ -34,10 +36,16 @@ curl -LO https://raw.github.com/kral2/hashistack-installer/main/hashistack-insta
 chmod +x hashistack-install.sh
 ```
 
-Run local installer
+Run local installer, passing a product name as argument:
 
 ``` shell
-./hashistack-install.sh
+./hashistack-install.sh [packer|terraform|consul|vault|nomad]
+```
+
+You can install multiple products at once:
+
+``` shell
+./hashistack-install.sh packer terraform vault
 ```
 
 ## System Requirements
