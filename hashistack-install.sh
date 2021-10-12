@@ -3,10 +3,13 @@
 # HASHISTACK INSTALLER - Automated Installation of the HashiCorp Stack
 #
 #  Automatically Download, Extract and Install Latest or Specific
-#  Version of Terraform, Packer, Consul, Vault, Nomad
+#  Version of Terraform, Packer, Consul, Vault, Nomad, Boundary, Waypoint
 #
-# Inspired from https://github.com/robertpeteuil/packer-installer
+# Largely inspired from https://github.com/robertpeteuil/packer-installer
 # and https://github.com/robertpeteuil/terraform-installer
+#
+# If/when https://iac.sh evovles to support the installation of HashiCorp products other than Terraform and Packer,
+# this project will be a good candidate for archives :-)
 
 set -e
 
@@ -14,7 +17,7 @@ script_name=$(basename "$0")
 version="0.2.0"
 
 usage() {
-  echo -e "usage: ${script_name} [packer|terraform|consul|vault|nomad]"
+  echo -e "usage: ${script_name} [packer|terraform|consul|vault|boundary|waypoint]"
   echo -e "     you can provide multiple product names, separated by a space character"
   echo -e "     automatically use sudo to install to /usr/local/bin"
   echo -e ""
@@ -28,14 +31,14 @@ install_product() {
     echo ""
     for ((i=1; i<=$#; i++))
         do
-            if [[ ${!i} =~ ^(packer|terraform|consul|vault|nomad)$ ]];then
+            if [[ ${!i} =~ ^(packer|terraform|consul|vault|boundary|waypoint)$ ]];then
                 printf "Downloading %s installer ... \n" "${!i}"
                 curl -LO "https://raw.github.com/kral2/hashistack-installer/main/${!i}-install.sh" 2>/dev/null
                 chmod +x "${!i}-install.sh"
                 ./"${!i}-install.sh" -a
                 rm -f "${!i}-install.sh"
             else
-                printf "%s is not a supported argument. Valid values are: packer, terraform, consul, vault, nomad\n" "${!i}"
+                printf "%s is not a supported argument. Valid values are: packer, terraform, consul, vault, boundary|waypoint\n" "${!i}"
             fi
         done
 }

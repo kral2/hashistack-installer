@@ -10,6 +10,12 @@ Given a version number MAJOR.MINOR.PATCH:
 - MINOR version when adding functionality in a backwards compatible manner,
 - PATCH version when making backwards compatible bug fixes.
 
+## [0.3.0] - 2021-10-12
+
+### Added
+
+- support for Boundary and Waypoint
+
 ## [0.2.0] - 2021-10-10
 
 ### Added

@@ -15,17 +15,21 @@ The **hashistack-install** script automates the process of downloading and insta
 3. Consul
 4. Vault
 5. Nomad
+6. Boundary
+7. Waypoint
 
 It is based on [Robert Peteuil](https://github.com/robertpeteuil)'s excellent [terraform-installer](https://github.com/robertpeteuil/terraform-installer) and [packer-installer](https://github.com/robertpeteuil/packer-installer).
 
-- additional install scripts for [Consul](https://www.consul.io/), [Vault](https://www.vaultproject.io/) and [Nomad](https://www.nomadproject.io/) were created.
+- additional install scripts for [Consul](https://www.consul.io/), [Vault](https://www.vaultproject.io/), [Nomad](https://www.nomadproject.io/), [Boundary](https://www.boundaryproject.io/) and [Waypoint](https://www.waypointproject.io/)were created.
 - minor changes were also made to select binaries correctly for Linux on arm (use `arm64` binaries instead of `arm` when `aarch` is detected).
 
 Current version is just a wrapper script calling each individual installer with the `-a` flag, which automatically `sudo` to install to `/usr/bin/local`.
 
-Future versions of this global installer may give more choices, exposing installer options for each installer.
+It only support to install the latest available version on [release.hashicorp.com](https://releases.hashicorp.com/). Future versions of this global installer may give more choices, exposing installer options for each installer.
 
 For detailed options and capabilities of each installer, please see Robert's [Packer Installer](https://github.com/robertpeteuil/packer-installer) and [Terraform Installer](https://github.com/robertpeteuil/terraform-installer).
+
+If/when https://iac.sh evovles to support the installation of HashiCorp products other than Terraform and Packer, this project will be a good candidate for archives :-)
 
 ## Download and Use Locally
 
@@ -39,7 +43,7 @@ chmod +x hashistack-install.sh
 Run local installer, passing a product name as argument:
 
 ``` shell
-./hashistack-install.sh [packer|terraform|consul|vault|nomad]
+./hashistack-install.sh [packer|terraform|consul|vault|nomad|boundary|waypoint]
 ```
 
 You can install multiple products at once:
