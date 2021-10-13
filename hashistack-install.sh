@@ -31,14 +31,14 @@ install_product() {
     echo ""
     for ((i=1; i<=$#; i++))
         do
-            if [[ ${!i} =~ ^(packer|terraform|consul|vault|boundary|waypoint)$ ]];then
+            if [[ ${!i} =~ ^(packer|terraform|consul|vault|nomad|boundary|waypoint)$ ]];then
                 printf "Downloading %s installer ... \n" "${!i}"
                 curl -LO "https://raw.github.com/kral2/hashistack-installer/main/${!i}-install.sh" 2>/dev/null
                 chmod +x "${!i}-install.sh"
                 ./"${!i}-install.sh" -a
                 rm -f "${!i}-install.sh"
             else
-                printf "%s is not a supported argument. Valid values are: packer, terraform, consul, vault, boundary|waypoint\n" "${!i}"
+                printf "%s is not a supported argument. Valid values are: packer, terraform, consul, vault, nomad, boundary, waypoint\n" "${!i}"
             fi
         done
 }
