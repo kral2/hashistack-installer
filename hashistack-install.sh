@@ -14,7 +14,7 @@
 set -e
 
 script_name=$(basename "$0")
-version="0.2.0"
+version="0.3.1"
 
 usage() {
   echo -e "usage: ${script_name} [packer|terraform|consul|vault|boundary|waypoint]"
