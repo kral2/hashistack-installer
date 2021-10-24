@@ -17,7 +17,7 @@ script_name=$(basename "$0")
 version="0.3.1"
 
 usage() {
-  echo -e "usage: ${script_name} [packer|terraform|consul|vault|boundary|waypoint]"
+  echo -e "usage: ${script_name} [ packer | terraform | consul | vault | nomad | boundary | waypoint ]"
   echo -e "     you can provide multiple product names, separated by a space character"
   echo -e "     automatically use sudo to install to /usr/local/bin"
   echo -e ""
