@@ -10,7 +10,13 @@ Given a version number MAJOR.MINOR.PATCH:
 - MINOR version when adding functionality in a backwards compatible manner,
 - PATCH version when making backwards compatible bug fixes.
 
-## [0.3.0] - 2021-10-13
+## [0.3.2] - 2021-10-24
+
+### Fixes
+
+- Fix Waypoint installer: installation on Linux arm architecture (waypoint is not compiled for arm64 yet)
+
+## [0.3.1] - 2021-10-13
 
 ### Fixes
 
