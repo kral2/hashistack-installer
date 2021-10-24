@@ -98,7 +98,7 @@ if [[ -z "$VERSION" ]]; then
 fi
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 if [[ "$OS" == "linux" ]]; then
-  PROC=$(lscpu 2> /dev/null | awk '/Architecture/ {if($2 == "x86_64") {print "amd64"; exit} else if($2 ~ /arm/) {print "arm"; exit} else if($2 ~ /aarch64/) {print "arm64"; exit} else {print "386"; exit}}')
+  PROC=$(lscpu 2> /dev/null | awk '/Architecture/ {if($2 == "x86_64") {print "amd64"; exit} else if($2 ~ /arm/) {print "arm"; exit} else if($2 ~ /aarch64/) {print "arm"; exit} else {print "386"; exit}}')
   if [[ -z $PROC ]]; then
     PROC=$(cat /proc/cpuinfo | awk '/model\ name/ {if($0 ~ /ARM/) {print "arm"; exit}}')
   fi
