@@ -14,7 +14,7 @@
 set -e
 
 script_name=$(basename "$0")
-version="0.3.1"
+version="0.3.3"
 
 usage() {
   echo -e "usage: ${script_name} [ packer | terraform | consul | vault | nomad | boundary | waypoint ]"
@@ -35,7 +35,7 @@ install_product() {
                 printf "Downloading %s installer ... \n" "${!i}"
                 curl -LO "https://raw.github.com/kral2/hashistack-installer/main/${!i}-install.sh" 2>/dev/null
                 chmod +x "${!i}-install.sh"
-                ./"${!i}-install.sh" -a
+                ./"${!i}-install.sh" -c
                 rm -f "${!i}-install.sh"
             else
                 printf "%s is not a supported argument. Valid values are: packer, terraform, consul, vault, nomad, boundary, waypoint\n" "${!i}"

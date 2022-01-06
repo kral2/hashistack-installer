@@ -10,6 +10,12 @@ Given a version number MAJOR.MINOR.PATCH:
 - MINOR version when adding functionality in a backwards compatible manner,
 - PATCH version when making backwards compatible bug fixes.
 
+## [0.3.3] - 2022-01-07
+
+### Added
+
+- Bootstraping script for quickstart without sudoers rights
+
 ## [0.3.2] - 2021-10-24
 
 ### Fixes
