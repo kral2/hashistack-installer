@@ -10,7 +10,7 @@ echo ""
 echo "*** Local install of Hashistack tools"
 mkdir -p .hashistack
 cd .hashistack
-../hashistack-install.sh terraform packer consul nomad vault boundary waypoint
+../hashistack-install.sh terraform consul nomad vault boundary waypoint
 
 # Update PATH and activate the new tools in the current shell
 echo 'export PATH=~/.hashistack:$PATH' >> ~/.bashrc
